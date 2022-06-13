@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Instituto">
+  <ClassDiagramComponents>
+    <Class name="Persona" package="" visibility="public" isAbstract="true" xPosition="373.0" yPosition="468.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Profesor" package="" visibility="public" xPosition="82.0" yPosition="359.0">
+      <Fields>
+        <Field name="departamento" type="String" visibility="private"/>
+        <Field name="cargo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Alumno" package="" visibility="public" xPosition="663.0" yPosition="359.0">
+      <Fields>
+        <Field name="fechaNacimiento" type="String" visibility="private"/>
+        <Field name="codigo" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Aula" package="" visibility="public" xPosition="350.0" yPosition="222.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="numOrdenadores" type="int" visibility="private"/>
+        <Field name="maximoAlumnos" type="int" visibility="private"/>
+        <Field name="alumnes" type="ArrayList" visibility="private"/>
+        <Field name="Profesor" type="Object" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="ordenadoresMaximos" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Instituto" package="" visibility="public" xPosition="727.0" yPosition="38.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="Aulas" type="ArrayList" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Profesor" target="Persona"/>
+    <HasRelation name="Hay" source="Aula" target="Profesor" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="Hay" source="Aula" target="Alumno" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <IsRelation name="is" source="Alumno" target="Persona"/>
+    <HasRelation name="Tiene" source="Instituto" target="Aula" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
